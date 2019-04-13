@@ -25,9 +25,14 @@ namespace MyCoreProject
                 app.UseDeveloperExceptionPage();
             }
 
+            var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+            var machineName = System.Diagnostics.Process.GetCurrentProcess().MachineName;
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync(processName);
+                await context.Response.WriteAsync(machineName);
             });
         }
     }
