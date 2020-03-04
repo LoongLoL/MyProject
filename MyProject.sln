@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCoreProject", "MyCoreProject\MyCoreProject.csproj", "{BD1581A4-01FB-4979-9AA7-F8E65E628454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "简单手机号码验证", "简单手机号码验证\简单手机号码验证.csproj", "{D32638B6-3413-4FDA-B939-C5327CC3705A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简单手机号码验证", "简单手机号码验证\简单手机号码验证.csproj", "{D32638B6-3413-4FDA-B939-C5327CC3705A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "返回统一json格式", "返回统一json格式\返回统一json格式.csproj", "{88FB57B8-8BF6-4133-B969-C96207655A52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "利用Swagger自动生成接口文档", "利用Swagger自动生成接口文档\利用Swagger自动生成接口文档.csproj", "{970C6A37-680F-467F-ACD7-CB765692F796}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "一行代码搞定文件上传", "一行代码搞定文件上传\一行代码搞定文件上传.csproj", "{7AE97466-44A2-4C10-949E-D93D0815D0CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{D32638B6-3413-4FDA-B939-C5327CC3705A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32638B6-3413-4FDA-B939-C5327CC3705A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32638B6-3413-4FDA-B939-C5327CC3705A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88FB57B8-8BF6-4133-B969-C96207655A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FB57B8-8BF6-4133-B969-C96207655A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FB57B8-8BF6-4133-B969-C96207655A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FB57B8-8BF6-4133-B969-C96207655A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970C6A37-680F-467F-ACD7-CB765692F796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970C6A37-680F-467F-ACD7-CB765692F796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970C6A37-680F-467F-ACD7-CB765692F796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970C6A37-680F-467F-ACD7-CB765692F796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
