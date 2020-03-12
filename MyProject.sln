@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "利用Swagger自动生成�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "一行代码搞定文件上传", "一行代码搞定文件上传\一行代码搞定文件上传.csproj", "{7AE97466-44A2-4C10-949E-D93D0815D0CC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerAndJwt", "SwaggerAndJwt\SwaggerAndJwt.csproj", "{BC78DBED-986B-4350-942C-53A1320AA82D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D631B942-956D-4D6B-828C-75474071CC8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AE97466-44A2-4C10-949E-D93D0815D0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC78DBED-986B-4350-942C-53A1320AA82D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC78DBED-986B-4350-942C-53A1320AA82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC78DBED-986B-4350-942C-53A1320AA82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC78DBED-986B-4350-942C-53A1320AA82D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D631B942-956D-4D6B-828C-75474071CC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D631B942-956D-4D6B-828C-75474071CC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D631B942-956D-4D6B-828C-75474071CC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D631B942-956D-4D6B-828C-75474071CC8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

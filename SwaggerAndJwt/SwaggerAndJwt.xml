@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwaggerAndJwt</name>
+    </assembly>
+    <members>
+        <member name="T:SwaggerAndJwt.Appsettings">
+            <summary>
+            appsettings.json操作类
+            </summary>
+        </member>
+        <member name="M:SwaggerAndJwt.Appsettings.app(System.String[])">
+            <summary>
+            封装要操作的字符
+            </summary>
+            <param name="sections">节点配置</param>
+            <returns></returns>
+        </member>
+        <member name="T:SwaggerAndJwt.Common.UtilConvert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToInt(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToInt(System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToMoney(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToMoney(System.Object,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToString(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToString(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToDecimal(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToDecimal(System.Object,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToDate(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToDate(System.Object,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <param name="errorValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Common.UtilConvert.ObjToBool(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="thisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SwaggerAndJwt.Controllers.WeatherForecastController">
+            <summary>
+            天气管理
+            </summary>
+        </member>
+        <member name="M:SwaggerAndJwt.Controllers.WeatherForecastController.Get">
+            <summary>
+            获取天气信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Controllers.WeatherForecastController.Post(SwaggerAndJwt.Models.WeatherPostDto)">
+            <summary>
+            提交天气信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Controllers.WeatherForecastController.PostError(SwaggerAndJwt.Models.WeatherPostDto)">
+            <summary>
+            废弃的提交天气信息接口
+            </summary>
+            <param name="dto"></param>
+        </member>
+        <member name="M:SwaggerAndJwt.Helper.JwtHelper.IssueJwt(SwaggerAndJwt.Helper.TokenModelJwt)">
+            <summary>
+            颁发JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SwaggerAndJwt.Helper.JwtHelper.SerializeJwt(System.String)">
+            <summary>
+            解析
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SwaggerAndJwt.Helper.TokenModelJwt">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Helper.TokenModelJwt.Uid">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Helper.TokenModelJwt.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Helper.TokenModelJwt.Work">
+            <summary>
+            职能
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Models.WeatherPostDto.Wid">
+            <summary>
+            天气Id
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Models.WeatherPostDto.Name">
+            <summary>
+            天气名称
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.Models.WeatherPostDto.Content">
+            <summary>
+            天气内容
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.WeatherForecast.Date">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.WeatherForecast.TemperatureC">
+            <summary>
+            摄氏度
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.WeatherForecast.TemperatureF">
+            <summary>
+            华氏温度
+            </summary>
+        </member>
+        <member name="P:SwaggerAndJwt.WeatherForecast.Summary">
+            <summary>
+            备注
+            </summary>
+        </member>
+    </members>
+</doc>
