@@ -10,9 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using SwaggerAndJwt;
 
-namespace IdentityServer
+namespace Ids4认证测试
 {
     public class Startup
     {
@@ -22,19 +21,20 @@ namespace IdentityServer
         }
 
         public IConfiguration Configuration { get; }
-
+        private static readonly string apiName = "swagger_api";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            #region IdentityServer����
-            var builder = services.AddIdentityServer()
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApis())
-                .AddInMemoryClients(Config.GetClients())
-                .AddTestUsers(Config.GetUsers());
-            builder.AddDeveloperSigningCredential();
-            #endregion
+
+            services.AddAuthorization();
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:3000";    //配置Identityserver的授权地址
+                    options.RequireHttpsMetadata = false;           //不需要https    
+                    options.ApiName = apiName;  //api的name，需要和config的名称相同
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,12 +44,11 @@ namespace IdentityServer
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseIdentityServer();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

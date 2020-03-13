@@ -23,6 +23,8 @@ namespace SwaggerAndJwt
             };
         }
 
+        private static readonly string apiName = "swagger_api";
+
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new IdentityResource[]
@@ -39,7 +41,7 @@ namespace SwaggerAndJwt
         {
             return new[]
             {
-                new ApiResource("swagger_api", "Demo SwaggerUI integrat Idp")
+                new ApiResource(apiName, apiName)
             };
         }
         /// <summary>
@@ -60,7 +62,7 @@ namespace SwaggerAndJwt
                     {
                         "http://localhost:5001/swagger/oauth2-redirect.html"
                     },
-                    AllowedScopes = { "swagger_api" }
+                    AllowedScopes = { apiName }
                 }
             };
         }
