@@ -17,7 +17,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerAndJwt", "src\Swagge
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{D631B942-956D-4D6B-828C-75474071CC8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ids4认证测试", "src\Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ids4认证测试", "src\Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{76E4B130-39C4-468F-91ED-95C7651C10D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C1996020-06B7-4D86-8A51-F2D258E352D5}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Swagger和Jwt.md = docs\Swagger和Jwt.md
+		docs\学习IdentityServer4.xmind = docs\学习IdentityServer4.xmind
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +68,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BD1581A4-01FB-4979-9AA7-F8E65E628454} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{D32638B6-3413-4FDA-B939-C5327CC3705A} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{88FB57B8-8BF6-4133-B969-C96207655A52} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{970C6A37-680F-467F-ACD7-CB765692F796} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{7AE97466-44A2-4C10-949E-D93D0815D0CC} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{BC78DBED-986B-4350-942C-53A1320AA82D} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{D631B942-956D-4D6B-828C-75474071CC8A} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
+		{F5A6A9E3-A535-474F-902B-9EA15EE95A50} = {76E4B130-39C4-468F-91ED-95C7651C10D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91933727-1EF0-4141-A2E4-CB99CDEC3DCA}
