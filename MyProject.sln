@@ -17,7 +17,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerAndJwt", "SwaggerAnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D631B942-956D-4D6B-828C-75474071CC8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ids4认证测试", "Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ids4认证测试", "Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{992A41B9-FF90-4A3B-9E7B-1BEA51FFDE79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9E150E61-5FEF-4751-9926-8A100FE7F4C4}"
+	ProjectSection(SolutionItems) = preProject
+		SwaggerAndJwt\Readme.md = SwaggerAndJwt\Readme.md
+		C:\Users\Loong\Desktop\学习IdentityServer4.xmind = C:\Users\Loong\Desktop\学习IdentityServer4.xmind
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
