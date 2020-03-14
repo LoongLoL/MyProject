@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCoreProject", "MyCoreProject\MyCoreProject.csproj", "{BD1581A4-01FB-4979-9AA7-F8E65E628454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCoreProject", "src\MyCoreProject\MyCoreProject.csproj", "{BD1581A4-01FB-4979-9AA7-F8E65E628454}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简单手机号码验证", "简单手机号码验证\简单手机号码验证.csproj", "{D32638B6-3413-4FDA-B939-C5327CC3705A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "简单手机号码验证", "src\简单手机号码验证\简单手机号码验证.csproj", "{D32638B6-3413-4FDA-B939-C5327CC3705A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "返回统一json格式", "返回统一json格式\返回统一json格式.csproj", "{88FB57B8-8BF6-4133-B969-C96207655A52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "返回统一json格式", "src\返回统一json格式\返回统一json格式.csproj", "{88FB57B8-8BF6-4133-B969-C96207655A52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "利用Swagger自动生成接口文档", "利用Swagger自动生成接口文档\利用Swagger自动生成接口文档.csproj", "{970C6A37-680F-467F-ACD7-CB765692F796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "利用Swagger自动生成接口文档", "src\利用Swagger自动生成接口文档\利用Swagger自动生成接口文档.csproj", "{970C6A37-680F-467F-ACD7-CB765692F796}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "一行代码搞定文件上传", "一行代码搞定文件上传\一行代码搞定文件上传.csproj", "{7AE97466-44A2-4C10-949E-D93D0815D0CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "一行代码搞定文件上传", "src\一行代码搞定文件上传\一行代码搞定文件上传.csproj", "{7AE97466-44A2-4C10-949E-D93D0815D0CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerAndJwt", "SwaggerAndJwt\SwaggerAndJwt.csproj", "{BC78DBED-986B-4350-942C-53A1320AA82D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerAndJwt", "src\SwaggerAndJwt\SwaggerAndJwt.csproj", "{BC78DBED-986B-4350-942C-53A1320AA82D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D631B942-956D-4D6B-828C-75474071CC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{D631B942-956D-4D6B-828C-75474071CC8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ids4认证测试", "Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ids4认证测试", "src\Ids4认证测试\Ids4认证测试.csproj", "{F5A6A9E3-A535-474F-902B-9EA15EE95A50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

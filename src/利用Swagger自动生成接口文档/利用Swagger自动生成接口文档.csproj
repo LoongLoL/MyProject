@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\WorkSpace\MyProject\利用Swagger自动生成接口文档\利用Swagger自动生成接口文档.xml</DocumentationFile>
+    <DocumentationFile>..\利用Swagger自动生成接口文档\利用Swagger自动生成接口文档.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
