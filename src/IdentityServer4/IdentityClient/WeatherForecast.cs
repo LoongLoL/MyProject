@@ -1,6 +1,6 @@
 using System;
 
-namespace Ids4认证测试
+namespace IdentityClient
 {
     public class WeatherForecast
     {

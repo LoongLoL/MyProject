@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Ids4认证测试.Controllers
+namespace IdentityClient.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -25,6 +25,7 @@ namespace Ids4认证测试.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -35,14 +36,6 @@ namespace Ids4认证测试.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [Route("GetTest")]
-        [Authorize]
-        [HttpGet]
-        public string GetTest()
-        {
-            return "sss";
         }
     }
 }
