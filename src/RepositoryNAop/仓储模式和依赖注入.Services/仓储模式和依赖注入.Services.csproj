@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\仓储模式和依赖注入.IRepository\仓储模式和依赖注入.IRepository.csproj" />
+    <ProjectReference Include="..\仓储模式和依赖注入.IServices\仓储模式和依赖注入.IServices.csproj" />
+    <ProjectReference Include="..\仓储模式和依赖注入.Repository\仓储模式和依赖注入.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
