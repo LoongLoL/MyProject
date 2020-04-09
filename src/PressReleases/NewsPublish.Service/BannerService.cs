@@ -17,6 +17,11 @@ namespace NewsPublish.Service
             _db = db;
         }
 
+        /// <summary>
+        /// 增加banner
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public ResponseModel AddBanner(AddBannerDto dto)
         {
             var banner = new Banner { AddTime = dto.AddTime, Remark = dto.Remark, Image = dto.Image, Url = dto.Url };
@@ -27,6 +32,10 @@ namespace NewsPublish.Service
             return new ResponseModel() { Code = 0, Result = "banner添加失败！" };
         }
 
+        /// <summary>
+        /// 获取banner列表
+        /// </summary>
+        /// <returns></returns>
         public ResponseModel GetBannerList()
         {
             var bannerList = _db.Banners.ToList().OrderByDescending(c => c.AddTime);
@@ -45,6 +54,11 @@ namespace NewsPublish.Service
             return result;
         }
 
+        /// <summary>
+        /// 删除benner
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ResponseModel DeleteBanne(int id)
         {
             var banner = _db.Banners.Find(id);
@@ -57,6 +71,11 @@ namespace NewsPublish.Service
             return new ResponseModel { Code = 0, Result = $"删除Id为{id}的数据失败！" };
         }
 
+        /// <summary>
+        /// 更新banner
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public ResponseModel UpdateBanner(UpdateBannerDto dto)
         {
             var banner = _db.Banners.Find(dto.Id);
