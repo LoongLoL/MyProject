@@ -24,7 +24,7 @@ namespace NewsPublish.Service
         /// <returns></returns>
         public ResponseModel AddBanner(AddBannerDto dto)
         {
-            var banner = new Banner { AddTime = dto.AddTime, Remark = dto.Remark, Image = dto.Image, Url = dto.Url };
+            var banner = new Banner { AddTime = DateTime.Now, Remark = dto.Remark, Image = dto.Image, Url = dto.Url };
             _db.Banners.Add(banner);
             var i = _db.SaveChanges();
             if (i > 0)

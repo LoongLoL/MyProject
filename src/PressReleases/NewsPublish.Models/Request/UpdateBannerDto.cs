@@ -1,10 +1,7 @@
-﻿using NewsPublish.Models.Entitys;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using NewsPublish.Models.Entitys;
 
-namespace NewsPublish.Models.Response
+namespace NewsPublish.Models.Request
 {
     public class UpdateBannerDto : Entity
     {
