@@ -32,7 +32,7 @@ namespace NewsPublish.Models.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(maxLength: 100, nullable: true),
                     Sort = table.Column<int>(nullable: false),
-                    Reamrk = table.Column<string>(maxLength: 200, nullable: true)
+                    Remark = table.Column<string>(maxLength: 200, nullable: true)
                 },
                 constraints: table =>
                 {

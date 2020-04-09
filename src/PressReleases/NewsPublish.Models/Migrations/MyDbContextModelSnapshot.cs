@@ -87,7 +87,7 @@ namespace NewsPublish.Models.Migrations
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
-                    b.Property<string>("Reamrk")
+                    b.Property<string>("Remark")
                         .HasColumnType("varchar(200) CHARACTER SET utf8mb4")
                         .HasMaxLength(200);
 

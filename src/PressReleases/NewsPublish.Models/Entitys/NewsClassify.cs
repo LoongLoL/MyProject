@@ -15,7 +15,7 @@ namespace NewsPublish.Models.Entitys
         public string Name { get; set; }
         public int Sort { get; set; }
         [MaxLength(200)]
-        public string Reamrk { get; set; }
+        public string Remark { get; set; }
         public virtual ICollection<News> News { get; set; }
     }
 }
