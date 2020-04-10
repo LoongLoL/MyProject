@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NewsPublish.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class HomeController : Controller
+    public class HomeController : AdminControllerBase
     {
         // GET: Home
         public ActionResult Index()

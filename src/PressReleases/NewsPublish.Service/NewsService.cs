@@ -195,9 +195,9 @@ namespace NewsPublish.Service
         /// <param name="total">总数</param>
         /// <param name="where"条件集合</param>
         /// <returns></returns>
-        public ResponseModel GerNewsListPage(int pageSize, int pageIndex, out int total, List<Expression<Func<News, bool>>> where)
+        public ResponseModel GetNewsListPage(int pageSize, int pageIndex, out int total, List<Expression<Func<News, bool>>> where)
         {
-            var list = _db.News.Include("NewsClasify").Include("NewsComment");
+            var list = _db.News.Include("NewsClassify").Include("NewsComment");
             foreach (var item in where)
             {
                 list = list.Where(item);

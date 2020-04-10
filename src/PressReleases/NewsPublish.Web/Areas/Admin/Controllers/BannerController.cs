@@ -12,8 +12,7 @@ using System.IO;
 
 namespace NewsPublish.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class BannerController : Controller
+    public class BannerController : AdminControllerBase
     {
         BannerService _bannerService;
         IHostEnvironment _hostEnvironment;
