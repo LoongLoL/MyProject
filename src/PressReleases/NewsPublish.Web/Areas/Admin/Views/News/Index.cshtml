@@ -29,7 +29,7 @@
     <div class="pd-20">
         <div class="text-c">
             新闻类别:
-            <select class="select" id="" name="">
+            <select class="select" id="classifyId" name="classifyId">
                 <option value="0">选择一个新闻类别</option>
                 @if (Model.Code == 200)
                 {
@@ -40,7 +40,7 @@
                 }
             </select>
             &nbsp;
-            <input type="text" class="input-text" style="width:250px" placeholder="输入新闻标题" id="" name="">&nbsp;<button type="submit" class="btn btn-success" id="" name=""><i class="icon-search"></i> 搜新闻</button>
+            <input type="text" class="input-text" style="width:250px" placeholder="输入新闻标题" id="keyWord" name="keyWord">&nbsp;<button type="button" class="btn btn-success" onclick="search()"><i class="icon-search"></i> 搜新闻</button>
 
         </div>
         <div class="cl pd-5 bg-1 bk-gray mt-20">
@@ -131,14 +131,34 @@
             });
         }
 
+        function search() {
+            var classifyId = $("#classifyId").val();
+            var keyWord = $("#keyWord").val();
+            pageIndex = 1;
+            getNewsPage(pageSize, pageIndex, classifyId, keyWord);
+        }
         //删除新闻
         function del(obj, id) {
             layer.confirm('确认要删除吗？', function (index) {
-                $(obj).parents("tr").remove();
-                layer.msg('已删除!', 1);
+                $.ajax({
+                    type: "delete",
+                    async: true,
+                    url: "/Admin/News/DeleteNews",
+                    data: { id: id },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            layer.msg(data.result, 1);
+                            reload();
+                        }
+                        else
+                            layer.msg(data.result, 1);
+                    }
+                });
             });
         }
-
+        function reload() {
+            location.replace(location.href);
+        }
     </script>
 
 </body>

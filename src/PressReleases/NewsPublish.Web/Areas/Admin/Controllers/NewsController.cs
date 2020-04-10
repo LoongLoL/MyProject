@@ -40,6 +40,23 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             return Json(new { Total = total, Data = news.Data });
         }
 
+
+        [HttpDelete]
+        public JsonResult DeleteNews(int id)
+        {
+            if (id <= 0)
+                return Json(new ResponseModel { Code = 0, Result = "参数错误！" });
+            return Json(_newsService.DeleteNews(id));
+        }
+
+        [HttpPost]
+        public JsonResult AddNews(AddNewsDto dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Title))
+                return Json(new ResponseModel { Code = 0, Result = "新闻标题不能为空！" });
+            var result = _newsService.AddNews(dto);
+            return Json(result);
+        }
         #endregion
 
 
