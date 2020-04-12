@@ -34,5 +34,41 @@ namespace NewsPublish.Web.Controllers
         {
             return Json(_bannerService.GetBannerList());
         }
+
+        [HttpGet]
+        public JsonResult GetNewsTotal()
+        {
+            return Json(_newsSerrvice.GetNewsCount(c => true));
+        }
+
+        [HttpGet]
+        public JsonResult GetHomeNews()
+        {
+            return Json(_newsSerrvice.GetNewsList(c => true, 6));
+        }
+
+        [HttpGet]
+        public JsonResult GetCommentNews()
+        {
+            return Json(_newsSerrvice.GetNewCommentNewsList(c => true, 5));
+        }
+
+        [HttpGet]
+        public JsonResult SearchOneNews(string keyWord)
+        {
+            if (string.IsNullOrEmpty(keyWord))
+                return Json(new NewsPublish.Models.Response.ResponseModel
+                {
+                    Code = 0,
+                    Result = "搜索关键字不能为空！"
+                });
+            return Json(_newsSerrvice.GetSearchOneNews(c => c.Title.Contains(keyWord)));
+        }
+
+        public ActionResult Wrong()
+        {
+            ViewData["Title"] = "404";
+            return View(_newsSerrvice.GetNewsClassifyList());
+        }
     }
 }

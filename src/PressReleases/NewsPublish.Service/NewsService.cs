@@ -230,7 +230,7 @@ namespace NewsPublish.Service
         /// <returns></returns>
         public ResponseModel GetNewsList(Expression<Func<News, bool>> where, int topCount)
         {
-            var list = _db.News.Include("NewsClasify").Include("NewsComment").Where(where).OrderByDescending(c => c.PublishTime).Take(topCount);
+            var list = _db.News.Include("NewsClassify").Include("NewsComment").Where(where).OrderByDescending(c => c.PublishTime).Take(topCount);
 
             var response = new ResponseModel { Code = 200, Result = "获取列表数据成功！", Data = new List<NewsModel>() };
             foreach (var news in list)
@@ -256,12 +256,12 @@ namespace NewsPublish.Service
         /// <param name="where"></param>
         /// <param name="topCount"></param>
         /// <returns></returns>
-        public ResponseModel GetNewsCommentNewsList(Expression<Func<News, bool>> where, int topCount)
+        public ResponseModel GetNewCommentNewsList(Expression<Func<News, bool>> where, int topCount)
         {
             var newIds = _db.NewsComments.OrderByDescending(c => c.AddTime).GroupBy(c => c.NewsId).Select(c => c.Key).Take(topCount);
 
 
-            var list = _db.News.Include("NewsClasify").Include("NewsComment").Where(c => newIds.Contains(c.Id)).OrderByDescending(c => c.PublishTime);
+            var list = _db.News.Include("NewsClassify").Include("NewsComment").Where(c => newIds.Any() && newIds.Contains(c.Id)).OrderByDescending(c => c.PublishTime);
 
             var response = new ResponseModel { Code = 200, Result = "最新评论的新闻数据获取成功！", Data = new List<NewsModel>() };
             foreach (var news in list)
