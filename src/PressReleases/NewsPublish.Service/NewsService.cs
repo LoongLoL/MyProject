@@ -210,7 +210,7 @@ namespace NewsPublish.Service
                 response.Data.Add(new NewsModel
                 {
                     Id = news.Id,
-                    Contents = news.Contents,
+                    Contents = news.Contents.Length > 50 ? news.Contents.Substring(0, 50) : news.Contents,
                     Image = news.Image,
                     PublishTime = news.PublishTime.ToString("yyyy-MM-dd"),
                     Remark = news.Remark,

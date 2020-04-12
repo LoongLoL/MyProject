@@ -148,7 +148,17 @@
                     success: function (data) {
                         if (data.code == 200) {
                             layer.msg(data.result, 1);
-                            reload();
+                            if (currentPageCount == 1) {
+                                if (pageIndex == 1) {
+                                    reload();
+                                } else {
+                                    getNewsPage(pageSize, pageIndex - 1, classifyId, keyWord);
+                                }
+                            }
+                            else {
+                                getNewsPage(pageSize, pageIndex, classifyId, keyWord);
+                                $(obj).parents("tr").remove();
+                            }
                         }
                         else
                             layer.msg(data.result, 1);

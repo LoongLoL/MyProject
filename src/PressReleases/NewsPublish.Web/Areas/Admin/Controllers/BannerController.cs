@@ -58,7 +58,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             {
                 await uploadFile.CopyToAsync(stream);
             }
-            dto.Image = Path.Combine("/BannerPic/", fileName);
+            dto.Image = Path.Combine("/UploadFiles/BannerPic/", fileName);
             return Json(_bannerService.AddBanner(dto));
         }
 
