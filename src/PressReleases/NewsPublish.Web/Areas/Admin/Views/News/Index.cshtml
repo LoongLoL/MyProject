@@ -80,7 +80,7 @@
         var currentPageCount = 0;
         var classifyId = 0;
         var keyWord = "";
-
+var lastPage =1;
         window.onload = (function () {
             // optional set
             pageNav.pre = "&lt;上一页";
@@ -112,8 +112,9 @@
 
                     // p,当前页码,pn,总页面
                     pageNav.fn = function (p, pn) {
-                        $("#pageinfo").text("当前页:" + pageIndex + " 总页: " + totalPage);
-                        //alert("当前页:"+p+" 总页: "+pn);
+                        $("#pageinfo").text("当前页:" + p + " 总页: " + totalPage);
+                       if(p!=lastPage)
+                        getNewsPage(pageSize, p, classifyId, keyWord);
                     };
                     //重写分页状态,跳到第三页,总页33页
                     pageNav.go(pageIndex, totalPage);
@@ -127,6 +128,7 @@
                             + ')" class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td></tr > ';
                         $("#news_contents").append(tr);
                     }
+                    lastPage =pageIndex;
                 }
             });
         }
