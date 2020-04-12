@@ -10,15 +10,20 @@ using NewsPublish.Models.Entitys;
 using NewsPublish.Models.Request;
 using NewsPublish.Models.Response;
 using NewsPublish.Service;
+using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace NewsPublish.Web.Areas.Admin.Controllers
 {
     public class NewsController : AdminControllerBase
     {
         NewsService _newsService;
-        public NewsController(NewsService newsService)
+        IHostEnvironment _hostEnvironment;
+
+        public NewsController(NewsService newsService, IHostEnvironment hostEnvironment)
         {
             _newsService = newsService;
+            _hostEnvironment = hostEnvironment;
         }
 
         #region 新闻
@@ -49,11 +54,43 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             return Json(_newsService.DeleteNews(id));
         }
 
-        [HttpPost]
-        public JsonResult AddNews(AddNewsDto dto)
+        public ActionResult NewsAdd()
         {
+            var newsClassify = _newsService.GetNewsClassifyList();
+            return View(newsClassify);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> AddNews(AddNewsDto dto, IFormFile uploadFile)
+        {
+            if (dto.NewsClassifyId <= 0)
+                return Json(new ResponseModel { Code = 0, Result = "请选择新闻分类！" });
             if (string.IsNullOrWhiteSpace(dto.Title))
-                return Json(new ResponseModel { Code = 0, Result = "新闻标题不能为空！" });
+                return Json(new ResponseModel { Code = 0, Result = "请填写新闻标题！" });
+            if (string.IsNullOrEmpty(dto.Contents))
+                return Json(new ResponseModel { Code = 0, Result = "请输入新闻内容！" });
+            if (uploadFile != null)
+            {
+                var webRootPath = _hostEnvironment.ContentRootPath;
+                var relativeDirPath = "UploadFiles\\NewsPic";
+                var absolutePath = Path.Combine(webRootPath, relativeDirPath);
+
+                var fileTypes = new string[] { ".gif", ".jpg", ".jpeg", ".png", ".bmp" };
+                var extension = Path.GetExtension(uploadFile.FileName);
+                if (!fileTypes.Contains(extension.ToLower()))
+                    return Json(new ResponseModel { Code = 0, Result = "图片格式有误！" });
+
+                if (!Directory.Exists(absolutePath)) Directory.CreateDirectory(absolutePath);
+
+                var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + extension;
+                var filePath = Path.Combine(absolutePath, fileName);
+                await using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadFile.CopyToAsync(stream);
+                }
+                dto.Image = Path.Combine("/UploadFiles/NewsPic/", fileName);
+            }
+
             var result = _newsService.AddNews(dto);
             return Json(result);
         }

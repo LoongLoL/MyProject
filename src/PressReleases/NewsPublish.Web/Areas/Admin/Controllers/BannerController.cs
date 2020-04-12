@@ -42,7 +42,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
                 return Json(new ResponseModel { Code = 0, Result = "请上传图片！" });
 
             var webRootPath = _hostEnvironment.ContentRootPath;
-            var relativeDirPath = "BannerPic";
+            var relativeDirPath = "UploadFiles\\BannerPic";
             var absolutePath = Path.Combine(webRootPath, relativeDirPath);
 
             var fileTypes = new string[] { ".gif", ".jpg", ".jpeg", ".png", ".bmp" };
