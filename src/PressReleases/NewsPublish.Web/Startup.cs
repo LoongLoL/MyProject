@@ -52,8 +52,8 @@ namespace NewsPublish.Web
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), "BannerPic")),
-                RequestPath = "/BannerPic"
+                    Path.Combine(Directory.GetCurrentDirectory(), "UploadFiles")),
+                RequestPath = "/UploadFiles"
             });
             app.UseRouting();
 
