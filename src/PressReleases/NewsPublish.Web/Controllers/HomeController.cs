@@ -13,20 +13,20 @@ namespace NewsPublish.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly NewsService _newsSerrvice;
+        private readonly NewsService _newsService;
         private readonly BannerService _bannerService;
 
-        public HomeController(ILogger<HomeController> logger, NewsService newsSerrvice, BannerService bannerService)
+        public HomeController(ILogger<HomeController> logger, NewsService newsService, BannerService bannerService)
         {
             _logger = logger;
-            _newsSerrvice = newsSerrvice;
+            _newsService = newsService;
             _bannerService = bannerService;
         }
 
         public IActionResult Index()
         {
             ViewData["Title"] = "首页";
-            var newsClassifies = _newsSerrvice.GetNewsClassifyList();
+            var newsClassifies = _newsService.GetNewsClassifyList();
             return View(newsClassifies);
         }
         [HttpGet]
@@ -38,19 +38,19 @@ namespace NewsPublish.Web.Controllers
         [HttpGet]
         public JsonResult GetNewsTotal()
         {
-            return Json(_newsSerrvice.GetNewsCount(c => true));
+            return Json(_newsService.GetNewsCount(c => true));
         }
 
         [HttpGet]
         public JsonResult GetHomeNews()
         {
-            return Json(_newsSerrvice.GetNewsList(c => true, 6));
+            return Json(_newsService.GetNewsList(c => true, 6));
         }
 
         [HttpGet]
         public JsonResult GetCommentNews()
         {
-            return Json(_newsSerrvice.GetNewCommentNewsList(c => true, 5));
+            return Json(_newsService.GetNewCommentNewsList(c => true, 5));
         }
 
         [HttpGet]
@@ -62,13 +62,13 @@ namespace NewsPublish.Web.Controllers
                     Code = 0,
                     Result = "搜索关键字不能为空！"
                 });
-            return Json(_newsSerrvice.GetSearchOneNews(c => c.Title.Contains(keyWord)));
+            return Json(_newsService.GetSearchOneNews(c => c.Title.Contains(keyWord)));
         }
 
         public ActionResult Wrong()
         {
             ViewData["Title"] = "404";
-            return View(_newsSerrvice.GetNewsClassifyList());
+            return View(_newsService.GetNewsClassifyList());
         }
     }
 }
