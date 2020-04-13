@@ -44,7 +44,7 @@ namespace NewsPublish.Service
                     Data = new NewsCommentModel
                     {
                         Contents = com.Contents,
-                        Floor = $"#{news.Data.CommendCount + 1}",
+                        Floor = $"#{news.Data.CommentCount + 1}",
                         AddTime = com.AddTime
                     }
 
