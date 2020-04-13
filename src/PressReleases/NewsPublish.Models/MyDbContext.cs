@@ -3,6 +3,8 @@ using NewsPublish.Models.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Debug;
 
 namespace NewsPublish.Models
 {
@@ -13,12 +15,17 @@ namespace NewsPublish.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseMySql("Server=myr.aaronoy.online;Database=newspublish;Uid=oyyl;Pwd=oyyl@2020;");
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory).UseMySql("Server=myr.aaronoy.online;Database=newspublish;Uid=oyyl;Pwd=oyyl@2020;");
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public static readonly LoggerFactory MyLoggerFactory = new LoggerFactory(new[] {
+            new DebugLoggerProvider()
+        });
 
         public DbSet<Banner> Banners { get; set; }
         public DbSet<News> News { get; set; }

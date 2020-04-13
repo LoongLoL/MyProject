@@ -27,7 +27,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
         }
 
         #region 新闻
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var newsClassify = _newsService.GetNewsClassifyList();
             return View(newsClassify);
@@ -54,7 +54,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             return Json(_newsService.DeleteNews(id));
         }
 
-        public ActionResult NewsAdd()
+        public IActionResult NewsAdd()
         {
             var newsClassify = _newsService.GetNewsClassifyList();
             return View(newsClassify);
@@ -98,13 +98,13 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
 
 
         #region 新闻类别
-        public ActionResult NewsClassify()
+        public IActionResult NewsClassify()
         {
             var newsClassify = _newsService.GetNewsClassifyList();
             return View(newsClassify);
         }
 
-        public ActionResult AddClassify()
+        public IActionResult AddClassify()
         {
             return View();
         }
@@ -117,7 +117,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             return Json(_newsService.AddNewsClassify(dto));
         }
 
-        public ActionResult EditClassify(int id)
+        public IActionResult EditClassify(int id)
         {
             return View(_newsService.GetOneNewsClassify(id));
         }

@@ -18,7 +18,7 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             _newsCommentService = newsCommentService;
         }
         // GET: Comment
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(_newsCommentService.GetNewCommentList(c => true));
         }

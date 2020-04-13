@@ -90,6 +90,7 @@
         getHomeNews();
         getCommentNews();
     });
+
     function getBanner() {
         $.ajax({
             type: "get",
@@ -136,8 +137,8 @@
                     var data = result.data;
                     for (var i = 0; i < data.length; i++) {
                         var homeNews = '<article class="excerpt excerpt-' + i + '" style="">'
-                            + '<a class="focus" href="/News/Detail?id=' + data[i].id + '" title="' + data[i].title + '" target="_blank"><img class="thumb" data-original="' + data[i].image + '" src="' + data[i].image + '" alt="' + data[i].title + '" style="display: inline;"></a>'
-                            + '<header><h2><a href="/News/Detail?id=' + data[i].id + '" title="' + data[i].title + '" target="_blank">' + data[i].title + '</a></h2></header>'
+                            + '<a class="focus" href="/News/NewsDetail?id=' + data[i].id + '" title="' + data[i].title + '" target="_blank"><img class="thumb" data-original="' + data[i].image + '" src="' + data[i].image + '" alt="' + data[i].title + '" style="display: inline;"></a>'
+                            + '<header><h2><a href="/News/NewsDetail?id=' + data[i].id + '" title="' + data[i].title + '" target="_blank">' + data[i].title + '</a></h2></header>'
                             + '<p class="meta"><time class="time"><i class="glyphicon glyphicon-time"></i>' + data[i].publishTime + '</time><a class="comment" title="评论" target="_blank"><i class="glyphicon glyphicon-comment"></i>4</a></p>'
                             + '<p class="note">' + data[i].contents + '</p></article>';
                         $("#homeNews").append(homeNews);
@@ -156,7 +157,7 @@
                     $("#commentNews").empty();
                     var data = result.data;
                     for (var i = 0; i < data.length; i++) {
-                        var commentNews = '<li><a title="' + data[i].title + '" href="/News/Detail?id=' + data[i].id + '"><span class="thumbnail">'
+                        var commentNews = '<li><a title="' + data[i].title + '" href="/News/NewsDetail?id=' + data[i].id + '"><span class="thumbnail">'
                             + '<img class="thumb" data-original="' + data[i].image + '" src="' + data[i].image + '" alt="' + data[i].title + '" style="display: block;">'
                             + '</span><span class="text">' + data[i].title + '</span><span class="muted">'
                             + '<i class="glyphicon glyphicon-time"></i>' + data[i].publishTime + '</a></li>';
@@ -176,7 +177,7 @@
                 data: { keyWord: keyword },
                 success: function (result) {
                     if (result.code = 200 && result.data != null) {
-                        window.open('/News/Detail?id=' + result.data);
+                        window.open('/News/NewsDetail?id=' + result.data);
                     }
                     else {
                         window.open('/Home/Wrong');

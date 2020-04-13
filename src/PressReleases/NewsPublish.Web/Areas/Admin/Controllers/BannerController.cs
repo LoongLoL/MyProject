@@ -23,14 +23,14 @@ namespace NewsPublish.Web.Areas.Admin.Controllers
             _hostEnvironment = hostEnvironment;
         }
         // GET: Banner
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var bannerList = _bannerService.GetBannerList();
             return View(bannerList);
         }
 
         // GET: Banner/Details/5
-        public ActionResult BannerAdd(int id)
+        public IActionResult BannerAdd(int id)
         {
             return View();
         }

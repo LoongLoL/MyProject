@@ -65,7 +65,7 @@ namespace NewsPublish.Web.Controllers
             return Json(_newsService.GetSearchOneNews(c => c.Title.Contains(keyWord)));
         }
 
-        public ActionResult Wrong()
+        public IActionResult Wrong()
         {
             ViewData["Title"] = "404";
             return View(_newsService.GetNewsClassifyList());
