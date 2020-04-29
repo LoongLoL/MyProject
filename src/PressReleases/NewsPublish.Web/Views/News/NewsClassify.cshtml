@@ -89,7 +89,7 @@
                 url: '/Home/SearchOneNews',
                 data: { keyWord: keyword },
                 success: function (result) {
-                    if (result.code = 200 && result.data != null) {
+                    if (result.code == 200 && result.data != null) {
                         window.open('/News/NewsDetail?id=' + result.data);
                     }
                     else {

@@ -96,7 +96,7 @@
             type: "get",
             url: "/Home/GetBanner",
             success: function (result) {
-                if (result.code = 200) {
+                if (result.code == 200) {
                     $(".carousel-inner").empty();
                     var data = result.data;
                     for (var i = 0; i < data.length; i++) {
@@ -132,7 +132,7 @@
             type: "get",
             url: "/Home/GetHomeNews",
             success: function (result) {
-                if (result.code = 200) {
+                if (result.code == 200) {
                     $("#homeNews").empty();
                     var data = result.data;
                     for (var i = 0; i < data.length; i++) {
@@ -153,7 +153,7 @@
             type: "get",
             url: "/Home/GetCommentNews",
             success: function (result) {
-                if (result.code = 200) {
+                if (result.code == 200) {
                     $("#commentNews").empty();
                     var data = result.data;
                     for (var i = 0; i < data.length; i++) {
@@ -176,7 +176,7 @@
                 url: '/Home/SearchOneNews',
                 data: { keyWord: keyword },
                 success: function (result) {
-                    if (result.code = 200 && result.data != null) {
+                    if (result.code == 200 && result.data != null) {
                         window.open('/News/NewsDetail?id=' + result.data);
                     }
                     else {
