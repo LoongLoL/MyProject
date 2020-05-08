@@ -14,9 +14,9 @@ namespace NewsPublish.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly NewsService _newsService;
-        private readonly BannerService _bannerService;
+        private readonly Banner2Service _bannerService;
 
-        public HomeController(ILogger<HomeController> logger, NewsService newsService, BannerService bannerService)
+        public HomeController(ILogger<HomeController> logger, NewsService newsService, Banner2Service bannerService)
         {
             _logger = logger;
             _newsService = newsService;

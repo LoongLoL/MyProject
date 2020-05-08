@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>支付改变生活&hellip;</title>
+    <meta name="viewport" content="width =device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="format-detection" content="telephone =no,email =no,adress =no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+</head>
+<body style="background: white;">
+非凡技术网
+</body>
+<script type="text/javascript">
+    ap.alert({
+    title: '支付提醒',
+    content: '请截屏二维码，使用相册扫码',
+    buttonText: '我知道了'
+    }, function(){});
+
+    var pid = "你的UID";
+    var memo = "";
+    var url = "alipays://platformapi/startapp?appId=09999988&actionType=toAccount&goBack=NO&amount=&userId="+pid+"&memo=" + memo;
+    $(function(){
+    setTimeout(function(){
+    window.location.href = url;
+    },800);
+    });
+</script>
+</html>
