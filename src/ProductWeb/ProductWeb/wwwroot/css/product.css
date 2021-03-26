@@ -1,0 +1,77 @@
+﻿body {
+}
+
+#products {
+}
+
+.procls {
+    width: 290px;
+    display: block;
+    margin: 15px 30px 15px 0;
+    position: relative;
+    float: left;
+}
+
+    .procls:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .procls ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .procls ul li {
+            width: 290px;
+            display: block;
+        }
+
+.liimg {
+    height: 218px;
+    position: absolute;
+    background-color: grey;
+}
+
+    .liimg img {
+        width: 290px;
+        height: 218px;
+    }
+
+.lino {
+    position: relative;
+    height: 26px;
+    line-height: 26px;
+    padding: 192px 0 0 0;
+    font-weight: bold;
+}
+
+    .lino span {
+        background-color: #999;
+        line-height: 26px;
+        display: block;
+        text-align: center;
+        margin: 0 0 0 230px;
+    }
+
+.lititle {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 0 0 5px;
+    font-weight: bold;
+    font-size: large;
+    width: 290px;
+    margin: 26px 0 0 0;
+}
+
+.licontent {
+    text-align: left;
+    height: 78px;
+    width: 290px;
+    overflow: hidden;
+}
+
+    .licontent span {
+        line-height: 26px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
