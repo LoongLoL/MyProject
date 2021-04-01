@@ -17,9 +17,8 @@ namespace RDLCWeb
         {
             if (!IsPostBack)
             {
-
                 string connectionString = "Data Source =192.168.0.58; Database =testdb; User ID =sa; Password =oyyl@2021; Trusted_Connection = False";
-                string queryString = "select  dense_rank() over(order by name asc) as no ,Name,Type,FeeType,Fee from  TestDb";
+                string queryString = "select dense_rank() over(order by name asc) as No,Name,Type,FeeType,Fee from TestDb";
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = queryString;
