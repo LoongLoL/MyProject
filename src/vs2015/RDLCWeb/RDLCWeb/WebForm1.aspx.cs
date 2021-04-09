@@ -18,7 +18,8 @@ namespace RDLCWeb
             if (!IsPostBack)
             {
                 string connectionString = "Data Source =192.168.0.58; Database =testdb; User ID =sa; Password =oyyl@2021; Trusted_Connection = False";
-                string queryString = "select dense_rank() over(order by name asc) as No,Name,Type,FeeType,Fee from TestDb";
+                string queryString = "select dense_rank() over(order by Name+BillCode desc) as No,Name,BillCode,Type,FeeType,Fee from TestDb";
+                string queryStr = "select feetype, SUM(fee) as SumFee from testdb group by feetype";
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = queryString;
@@ -27,6 +28,9 @@ namespace RDLCWeb
                 SqlDataAdapter sda = new SqlDataAdapter(queryString, conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+                sda = new SqlDataAdapter(queryStr, conn);
+                DataTable dt2 = new DataTable();
+                sda.Fill(dt2);
                 conn.Close();
 
                 //DataTable dt = new DataTable();
@@ -109,12 +113,21 @@ namespace RDLCWeb
                 //row["Type"] = "衣服";
                 //dt.Rows.Add(row);
 
+                List<ReportParameter> paras = new List<ReportParameter>();
+                paras.Add(new ReportParameter("PNo", "P072-2"));
+                paras.Add(new ReportParameter("PQueryCondition", "2021-04-02-2021-04-02"));
+                paras.Add(new ReportParameter("PCreatorName", "星河湾"));
+                paras.Add(new ReportParameter("PCreateDepartment", "远古"));
+
+
                 rvShow.LocalReport.ReportEmbeddedResource = "RDLCWeb.Report1.rdlc";
-                //rvShow.LocalReport.SetParameters(paras);
+                rvShow.LocalReport.SetParameters(paras);
 
                 ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
+                ReportDataSource datasource2 = new ReportDataSource("DataSet2", (DataTable)dt2);
                 rvShow.LocalReport.DataSources.Clear();
                 rvShow.LocalReport.DataSources.Add(datasource);
+                rvShow.LocalReport.DataSources.Add(datasource2);
                 rvShow.LocalReport.DisplayName = "123";
                 rvShow.LocalReport.Refresh();
 

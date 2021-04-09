@@ -20,6 +20,16 @@
               <xs:element name="FeeType" msprop:Generator_ColumnVarNameInTable="columnFeeType" msprop:Generator_ColumnPropNameInRow="FeeType" msprop:Generator_ColumnPropNameInTable="FeeTypeColumn" msprop:Generator_UserColumnName="FeeType" type="xs:string" minOccurs="0" />
               <xs:element name="Fee" msprop:Generator_ColumnVarNameInTable="columnFee" msprop:Generator_ColumnPropNameInRow="Fee" msprop:Generator_ColumnPropNameInTable="FeeColumn" msprop:Generator_UserColumnName="Fee" type="xs:decimal" minOccurs="0" />
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:string" minOccurs="0" />
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="BillCode" msprop:Generator_ColumnVarNameInTable="columnBillCode" msprop:Generator_ColumnPropNameInRow="BillCode" msprop:Generator_ColumnPropNameInTable="BillCodeColumn" msprop:Generator_UserColumnName="BillCode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TestDt2" msprop:Generator_TableClassName="TestDt2DataTable" msprop:Generator_TableVarName="tableTestDt2" msprop:Generator_TablePropName="TestDt2" msprop:Generator_RowDeletingName="TestDt2RowDeleting" msprop:Generator_RowChangingName="TestDt2RowChanging" msprop:Generator_RowEvHandlerName="TestDt2RowChangeEventHandler" msprop:Generator_RowDeletedName="TestDt2RowDeleted" msprop:Generator_UserTableName="TestDt2" msprop:Generator_RowChangedName="TestDt2RowChanged" msprop:Generator_RowEvArgName="TestDt2RowChangeEvent" msprop:Generator_RowClassName="TestDt2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FeeType" msprop:Generator_ColumnVarNameInTable="columnFeeType" msprop:Generator_ColumnPropNameInRow="FeeType" msprop:Generator_ColumnPropNameInTable="FeeTypeColumn" msprop:Generator_UserColumnName="FeeType" type="xs:string" minOccurs="0" />
+              <xs:element name="SumFee" msprop:Generator_ColumnVarNameInTable="columnSumFee" msprop:Generator_ColumnPropNameInRow="SumFee" msprop:Generator_ColumnPropNameInTable="SumFeeColumn" msprop:Generator_UserColumnName="SumFee" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
