@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        windows.load = function () {
+            Alert();
+        }
+        function Alert() {
+            var val = document.getElementById("Text1").value;
+            alert(val);
+        }
+
+        function BtnClick() {
+            document.getElementById("Text1").value = "加载后。。。";
+            Alert();
+        }
+    </script>
+
+</head>
+<body>
+    <input id="Text1" type="text" value="加载前。。。" />
+    <input id="Button1" type="button" value="button" onclick="BtnClick()" />
+</body>
+</html>
