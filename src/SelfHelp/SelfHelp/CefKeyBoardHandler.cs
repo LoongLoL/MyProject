@@ -38,14 +38,13 @@ namespace SelfHelp
                         {
                             MainForm._mainForm.FormBorderStyle = FormBorderStyle.FixedSingle;
                             MainForm._mainForm.WindowState = FormWindowState.Normal;
-                            IsMaxWindow = !IsMaxWindow;
                         }
                         else
                         {
                             MainForm._mainForm.FormBorderStyle = FormBorderStyle.None;
                             MainForm._mainForm.WindowState = FormWindowState.Maximized;
-                            IsMaxWindow = !IsMaxWindow;
                         }
+                        IsMaxWindow = !IsMaxWindow;
                     }));
                     return true;
                 case vkF12:

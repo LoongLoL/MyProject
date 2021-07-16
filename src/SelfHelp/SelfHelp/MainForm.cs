@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,7 +44,7 @@ namespace SelfHelp
             browser = new ChromiumWebBrowser(webUrl)
             {
                 Dock = DockStyle.Fill,
-                KeyboardHandler = new CEFKeyBoardHandler()
+                KeyboardHandler = new CefKeyBoardHandler()
             };
             this.Controls.Add(browser);
         }
@@ -58,5 +59,17 @@ namespace SelfHelp
             Cef.Shutdown();
         }
 
+        public bool IsAdministrator()
+        {
+            bool isAdmin;
+
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+
+            return isAdmin;
+        }
     }
 }
